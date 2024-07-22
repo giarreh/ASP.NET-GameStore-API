@@ -1,5 +1,18 @@
 GET http://localhost:5162
+
+###
 GET http://localhost:5162/games
 
 ###
 GET http://localhost:5162/games/3
+
+###
+POST http://localhost:5162/games
+Content-Type: application/json
+
+{
+  "name": "Grand Turismo",
+  "price": 99.99,
+  "genre": "Racing",
+  "releaseDate": "2020-12-12"
+}
