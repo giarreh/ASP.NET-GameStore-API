@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\giarr\\ASP.NET projects\\GameStore API\\GameStore.api\\GameStore.api.csproj": {}
+    "c:\\Users\\giarr\\ASP.NET projects\\GameStore API\\GameStore.api\\GameStore.api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\giarr\\ASP.NET projects\\GameStore API\\GameStore.api\\GameStore.api.csproj": {
+    "c:\\Users\\giarr\\ASP.NET projects\\GameStore API\\GameStore.api\\GameStore.api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\giarr\\ASP.NET projects\\GameStore API\\GameStore.api\\GameStore.api.csproj",
+        "projectUniqueName": "c:\\Users\\giarr\\ASP.NET projects\\GameStore API\\GameStore.api\\GameStore.api.csproj",
         "projectName": "GameStore.api",
-        "projectPath": "C:\\Users\\giarr\\ASP.NET projects\\GameStore API\\GameStore.api\\GameStore.api.csproj",
+        "projectPath": "c:\\Users\\giarr\\ASP.NET projects\\GameStore API\\GameStore.api\\GameStore.api.csproj",
         "packagesPath": "C:\\Users\\giarr\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\giarr\\ASP.NET projects\\GameStore API\\GameStore.api\\obj\\",
+        "outputPath": "c:\\Users\\giarr\\ASP.NET projects\\GameStore API\\GameStore.api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\giarr\\AppData\\Roaming\\NuGet\\NuGet.Config",
