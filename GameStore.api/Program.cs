@@ -15,7 +15,12 @@ List<GameDto> games = [
   new GameDto(9, "The Elder Scrolls V: Skyrim", "Action role-playing", 39.99m, new DateOnly(2011, 11, 11)),
   new GameDto(10, "Fortnite", "Battle royale", 0.00m, new DateOnly(2017, 7, 25))
 ];
+
+// GET /games
 app.MapGet("/games", () => games);
+
+// GET /games/1
+app.MapGet("/games/{id}", (int id) => games.Find(game => game.Id == id));
 
 app.MapGet("/", () => "Hello World!");
 app.Run();
