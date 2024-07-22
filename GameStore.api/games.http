@@ -16,3 +16,14 @@ Content-Type: application/json
   "genre": "Racing",
   "releaseDate": "2020-12-12"
 }
+
+### CHANGING PRICE FROM 19.99 TO 29.99 AND TITLE TO Minecraft 2 AND RELEASE DATE TO 2024-7-23
+PUT http://localhost:5162/games/3
+Content-Type: application/json
+
+{
+  "name": "Minecraft 2",
+  "genre": "Sandbox",
+  "price": 29.99,
+  "releaseDate": "2024-07-23"
+}
