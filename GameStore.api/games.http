@@ -4,7 +4,7 @@ GET http://localhost:5162
 GET http://localhost:5162/games
 
 ###
-GET http://localhost:5162/games/3
+GET http://localhost:5162/games/2
 
 ###
 POST http://localhost:5162/games
@@ -18,7 +18,7 @@ Content-Type: application/json
 }
 
 ### CHANGING PRICE FROM 19.99 TO 29.99 AND TITLE TO Minecraft 2 AND RELEASE DATE TO 2024-7-23
-PUT http://localhost:5162/games/3
+PUT http://localhost:5162/games/2
 Content-Type: application/json
 
 {
