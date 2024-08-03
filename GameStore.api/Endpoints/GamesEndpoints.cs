@@ -20,13 +20,15 @@ private static readonly List<GameDto> games = [
     new GameDto(10, "Fortnite", "Battle royale", 0.00m, new DateOnly(2017, 7, 25))
   ];
 
-  public static WebApplication MapGamesEndpoints(this WebApplication app)
+  public static RouteGroupBuilder MapGamesEndpoints(this WebApplication app)
   {
+    var group = app.MapGroup("games");
+
     // GET /games
-    app.MapGet("/games", () => games);
+    group.MapGet("/", () => games);
 
     // GET /games/1
-    app.MapGet("/games/{id}", (int id) => {
+    group.MapGet("/{id}", (int id) => {
       GameDto? game = games.Find(game => game.Id == id);
 
     return game is null ? Results.NotFound() : Results.Ok(game);
@@ -35,7 +37,7 @@ private static readonly List<GameDto> games = [
     .WithName(GetGameEndpointName);
 
     // POST /games
-    app.MapPost("games", (CreateGameDto newGame ) => 
+    group.MapPost("/", (CreateGameDto newGame ) => 
     {
       GameDto game = new(
         games.Count + 1,
@@ -47,10 +49,11 @@ private static readonly List<GameDto> games = [
 
       games.Add(game);
       return Results.CreatedAtRoute(GetGameEndpointName, new { id = game.Id}, game);
-    });
+    })
+    .WithParameterValidation();
 
     // PUT /games
-    app.MapPut("games/{id}", (int id, UpdateGameDto updatedGame) => 
+    group.MapPut("/{id}", (int id, UpdateGameDto updatedGame) => 
     {
       var index = games.FindIndex(game => game.Id == id);
       if (index == -1){
@@ -69,7 +72,7 @@ private static readonly List<GameDto> games = [
     });
 
     // DELETE /games/1
-    app.MapDelete("games/{id}", (int id) => 
+    group.MapDelete("/{id}", (int id) => 
     {
       var index = games.FindIndex(game => game.Id == id);
       Console.WriteLine($"Found {games[index].Name} and removed it.");
@@ -77,6 +80,6 @@ private static readonly List<GameDto> games = [
       return Results.NoContent();
     });
 
-    return app;
+    return group;
   }
 }
